@@ -46,7 +46,6 @@ class Gallery extends React.Component {
         return (
             <div className="gallery">
                 {tracks.map((track, index) => {
-                    console.log(track)
                     const trackImg = track.album.images[0].url;
                     return (
                         <div
@@ -59,6 +58,15 @@ class Gallery extends React.Component {
                                 className="track-img"
                                 alt="track"
                             />
+                        <div className="track-play">
+                            <div className="track-play-inner">
+                                {
+                                    this.state.playingUrl === track.preview_url
+                                        ? <span>&#10074;&#10074;</span>
+                                        : <span>&#9654;</span>
+                                }
+                            </div>
+                        </div>
                         <p className="track-text">
                             {track.name}
                         </p>

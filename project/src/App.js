@@ -39,7 +39,6 @@ class App extends React.Component {
             fetch(FETCH_URL, fetchOptions)
                 .then(response => response.json())
                 .then(json => {
-                    console.log('top traks: ', json);
                     const tracks = json.tracks;
                     this.setState({tracks : tracks});
                 })

@@ -76,3 +76,41 @@ body {
     padding: 5px;
     bottom: 0;
 }
+
+.track-play {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+}
+
+.track-play-inner {
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: #000;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    padding-top: 13px;
+    margin-left: 80px;
+    margin-right: 80px;
+    opacity: 0;
+}
+
+.track-play-inner:hover {
+    opacity: .85;
+    animation-name: fade-in;
+    animation-duration: 0.35s
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.85;
+    }
+}
