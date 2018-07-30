@@ -14,11 +14,16 @@ class App extends React.Component {
         }
     }
 
+    componentDidMount() {
+
+    }
+
     search = () => {
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         let ALBUM_URL = `https://api.spotify.com/v1/artists`
-        const ACCESS_TOKEN = 'BQDe-TnHCGeKAnnnzkLDIWZRQCx_2GVF0VzCkf5IHkFJ3dDbAJ0vPs_G3iuiQ-fWzRn3U8qZxMahmNTx6HkEqwSUsWpyymMDppd_WlWDZxeu67JPG6Q8Yu7yS_smmzufLkauutEJ5-W4qX_bb3iDJwSs_5ebTC9_9iGbgjHMYjeGX7vtOg';
+        const ACCESS_TOKEN = 'BQAzLFa5r-0Z6zTEITZ3QXc2BVlYzmoPcvjfYQTGNq67xSmc-hmRO-1jeEXsA1igaV8P4Sxvk5TSyPHAeG2EKicIQt-etavpe4hTysopiwzl9SEmh-4p5ZCzPgS_1i3CJzvnINMV20laZLEDbq8WdL8JUZm3sY9PXavPGna2-Q05GUUsRA';
+        console.log(ACCESS_TOKEN);
 
         let fetchOptions = {
             method: 'GET',
