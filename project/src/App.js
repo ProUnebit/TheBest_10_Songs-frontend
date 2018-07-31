@@ -22,8 +22,9 @@ class App extends React.Component {
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         let ALBUM_URL = `https://api.spotify.com/v1/artists`
-        let APP_LOCATION = window.location.href;
-        let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
+        // let APP_LOCATION = window.location.href;
+        // let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
+        let ACCESS_TOKEN = 'BQDMB3xNRwRIJUBomDhcKaj4YwrpY6oJPLPsphY9Zfj9ZF9iMwfHMgaxCjl7Bly4oyVLfyCI6B-b7i7Rn2wx-sw089d9QlJ1sz3UwjM4BSjQe_zyY22-3CFKWK8Xraumd5S3__yXgmk-vvXwGtU20W_tfpsdqdZayijjEVJO9cqjMEffHw&refresh_token=AQCaPjI6Mktxg1PMzlSXGUTERRTYLgdm-z74rup9PHd-JIxZBEOExJ2UwIk6GmTSw6x326IguVLS-Aby_EuqxYoASbIIXjgcFQrxiaMXiChep5VU_2MhMa6369yt-FgPG9w';
         console.log(ACCESS_TOKEN);
 
         let fetchOptions = {
