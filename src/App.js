@@ -56,7 +56,7 @@ class App extends React.Component {
 
         return (
             <div className="app">
-                <div className="app-title">MusicMaster</div>
+                <div className="app-title">MusicMaster!</div>
                 <FormGroup>
                     <InputGroup>
                         <FormControl
