@@ -7,8 +7,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "serve": "^9.4.0",
-    "tokenify": "^1.2.0"
+    "serve": "^9.4.0"
   },
   "scripts": {
     "start": "serve --single ./build",
