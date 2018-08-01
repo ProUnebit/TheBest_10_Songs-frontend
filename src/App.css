@@ -11,6 +11,7 @@ body {
 }
 
 .app-title {
+    display: inline-block;
     font-family: 'Bungee Inline', cursive;
     font-size: 60px;
     margin-bottom: 40px;
@@ -98,6 +99,7 @@ body {
     border-right: 2px #333 solid;
     border-left: 2px #333 solid;
     padding: 0 15px;
+    margin-left: -10px;
 }
 
 .gallery {

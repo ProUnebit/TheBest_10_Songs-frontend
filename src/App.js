@@ -3,6 +3,7 @@ import './App.css';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import Profile from './Profile';
 import Gallery from './Gallery';
+import SpotifyLogo from './spotify.svg'
 
 class App extends React.Component {
     constructor(props) {
@@ -24,8 +25,8 @@ class App extends React.Component {
         let ALBUM_URL = `https://api.spotify.com/v1/artists`
         let APP_LOCATION = window.location.href;
         let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
-        // let ACCESS_TOKEN = 'BQCHHZIsq0xG_mQP5Ciac4MIbj9xmMMbprqGJPN17CvHAw9SKtVKbXz4EEmFyDkVtTMHJHeEp4GN3acsPtR0Xo3EpDe2tylbq9lGkJQsmdqlcK_qJZ_W-xXWzv7QqYHTJWJa1cRL4TArfn09QRoY71hNy9ClOCSJp3fqnR6wwzM1zW05Hg';
-        console.log(ACCESS_TOKEN);
+        // let ACCESS_TOKEN = 'BQAteRtsF6XWcWa4Hf3DiGxk5cm_Ik_FOJv9hX41uqRRAJa-q66Q2bk2ALOzXJ2P6CtlMUtrmgJLAiWfItICE1I37GMV8yFELeQoUtJTb22Vrz-Fqw-OHf0KBmxu_jcHiKotW19CtscrTxoeVHC071lQQizDh3334ZFAMxCwopxZY_7N3Q';
+        console.info(ACCESS_TOKEN);
 
         let fetchOptions = {
             method: 'GET',
@@ -53,10 +54,19 @@ class App extends React.Component {
     }
 
     render () {
+        // All this.state values
+        let { query, artist, tracks } = this.state;
 
         return (
             <div className="app">
                 <h2 className="app-title">The Best <span>10</span> Songs</h2>
+                <img
+                    src={SpotifyLogo}
+                    alt="Spotify logo"
+                    width="30px"
+                    height="30px"
+                    style={{marginLeft: '5px'}}
+                />
                 <FormGroup>
                     <InputGroup>
                         <FormControl
@@ -64,7 +74,7 @@ class App extends React.Component {
                                 type='text'
                                 className="search-input"
                                 placeholder="Search for an Artists"
-                                value = {this.state.query}
+                                value = {query}
                                 onChange = {event => {this.setState({query: event.target.value})}}
                                 onKeyPress = {event => event.key === "Enter" ? this.search() : null}
                         />
@@ -74,13 +84,13 @@ class App extends React.Component {
                     </InputGroup>
                 </FormGroup>
                 {
-                    this.state.artist !== null
+                    artist !== null
                     ? <div className="main-container">
                         <Profile
-                            artist = {this.state.artist}
+                            artist = {artist}
                         />
                         <Gallery
-                            tracks = {this.state.tracks}
+                            tracks = {tracks}
                         />
                         <span className="my-mail">
                             Mail for communication: &nbsp; <a href="mailto:ProUnebit@yandex.ru">ProUnebit@yandex.ru</a>

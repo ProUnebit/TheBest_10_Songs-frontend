@@ -40,8 +40,6 @@ class Gallery extends React.Component {
     render () {
 
         const tracks = this.props.tracks;
-        //or
-        // const { tracks } = this.props;
 
         return (
             <div className="gallery">
