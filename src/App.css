@@ -12,8 +12,8 @@ body {
 
 .app-title {
     font-family: 'Bungee Inline', cursive;
-    font-size: 58px;
-    margin-bottom: 35px;
+    font-size: 60px;
+    margin-bottom: 40px;
 }
 
 .app-title span {
@@ -27,12 +27,11 @@ body {
 }
 
 .main-container {
-    /* border: 2px solid pink; */
     display: grid;
     grid-template-columns: 500px 1fr;
     grid-template-rows: 620px auto;
     grid-column-gap: 30px;
-    margin-top: 50px;
+    margin-top: 60px;
     perspective: 100px;
     perspective-origin: left;
 }
@@ -49,11 +48,13 @@ body {
     transform-style: preserve-3d;
     transition: .15s linear;
     cursor: pointer;
+    opacity: .88;
 }
 
 .profile:hover {
     transform: rotateY(2deg);
     filter: drop-shadow(-4px -1px 9px #1cb5e0);
+    opacity: 1;
 }
 
 .profile-info {
@@ -104,7 +105,6 @@ body {
     grid-row: 1 / -1;
     display: flex;
     flex-wrap: wrap;
-    /* align-content: center; */
     justify-content: center;
 }
 
@@ -191,4 +191,18 @@ body {
     to {
         opacity: 0.85;
     }
+}
+
+.my-mail {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Signika', sans-serif;
+    font-size: 13px;
+    color: silver;
+}
+
+.my-mail a {
+    color: #1cb5e0;
 }
