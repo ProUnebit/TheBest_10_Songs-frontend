@@ -43,8 +43,11 @@ class Gallery extends React.Component {
         //or
         // const { tracks } = this.props;
 
+        // need create ? : mechanic for gallery (render maps or another element inclue 'Loading...')
+
         return (
             <div className="gallery">
+                <div className="triangle"></div>
                 {tracks.map((track, index) => {
                     const trackImg = track.album.images[0].url;
                     return (

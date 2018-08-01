@@ -22,9 +22,9 @@ class App extends React.Component {
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         let ALBUM_URL = `https://api.spotify.com/v1/artists`
-        let APP_LOCATION = window.location.href;
-        let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
-        // let ACCESS_TOKEN = 'BQDMB3xNRwRIJUBomDhcKaj4YwrpY6oJPLPsphY9Zfj9ZF9iMwfHMgaxCjl7Bly4oyVLfyCI6B-b7i7Rn2wx-sw089d9QlJ1sz3UwjM4BSjQe_zyY22-3CFKWK8Xraumd5S3__yXgmk-vvXwGtU20W_tfpsdqdZayijjEVJO9cqjMEffHw&refresh_token=AQCaPjI6Mktxg1PMzlSXGUTERRTYLgdm-z74rup9PHd-JIxZBEOExJ2UwIk6GmTSw6x326IguVLS-Aby_EuqxYoASbIIXjgcFQrxiaMXiChep5VU_2MhMa6369yt-FgPG9w';
+        // let APP_LOCATION = window.location.href;
+        // let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
+        let ACCESS_TOKEN = 'BQCHHZIsq0xG_mQP5Ciac4MIbj9xmMMbprqGJPN17CvHAw9SKtVKbXz4EEmFyDkVtTMHJHeEp4GN3acsPtR0Xo3EpDe2tylbq9lGkJQsmdqlcK_qJZ_W-xXWzv7QqYHTJWJa1cRL4TArfn09QRoY71hNy9ClOCSJp3fqnR6wwzM1zW05Hg';
         console.log(ACCESS_TOKEN);
 
         let fetchOptions = {
@@ -56,11 +56,13 @@ class App extends React.Component {
 
         return (
             <div className="app">
-                <div className="app-title">MusicMaster!!!</div>
+                <h2 className="app-title">The Best <span>10</span> Songs</h2>
                 <FormGroup>
                     <InputGroup>
                         <FormControl
+                                bsSize="large"
                                 type='text'
+                                className="search-input"
                                 placeholder="Search for an Artists"
                                 value = {this.state.query}
                                 onChange = {event => {this.setState({query: event.target.value})}}
@@ -73,15 +75,21 @@ class App extends React.Component {
                 </FormGroup>
                 {
                     this.state.artist !== null
-                    ? <div>
+                    ? <div className="main-container">
                         <Profile
                             artist = {this.state.artist}
                         />
                         <Gallery
                             tracks = {this.state.tracks}
                         />
+                    <span>Mail for communication: &nbsp; <a href="mailto:ProUnebit@yandex.ru">ProUnebit@yandex.ru</a></span>
                       </div>
-                    : <div></div>
+                    : <span
+                        role="img"
+                        aria-label="Music Note"
+                        style = {{fontSize: '36px'}}
+                      >🎵
+                </span>
                 }
             </div>
         )
