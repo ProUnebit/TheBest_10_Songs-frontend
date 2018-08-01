@@ -23,10 +23,10 @@ class App extends React.Component {
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         let ALBUM_URL = `https://api.spotify.com/v1/artists`
-        let APP_LOCATION = window.location.href;
-        let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
-        // let ACCESS_TOKEN = 'BQAteRtsF6XWcWa4Hf3DiGxk5cm_Ik_FOJv9hX41uqRRAJa-q66Q2bk2ALOzXJ2P6CtlMUtrmgJLAiWfItICE1I37GMV8yFELeQoUtJTb22Vrz-Fqw-OHf0KBmxu_jcHiKotW19CtscrTxoeVHC071lQQizDh3334ZFAMxCwopxZY_7N3Q';
-        console.info(ACCESS_TOKEN);
+        // let APP_LOCATION = window.location.href;
+        // let ACCESS_TOKEN = APP_LOCATION.split('=')[1];
+        let ACCESS_TOKEN = 'BQCoqZ_L3-xYUqMJ_gwKeEgAZ2tW9rAAIfxTPBReb_VR_a3I71djfNzwKqMEqAgfUC6iI39z6CFAZD0Ca0jF_GyCcr5LNT47gRB8Em-7kj43BwEFzs48NtfJu9vx3uOHtoAV6Kh54kBHHBgVlU0wJov88UeLDa4nVvt8DSp9w-rhdYQxww';
+        console.info('access_token:', ACCESS_TOKEN);
 
         let fetchOptions = {
             method: 'GET',
@@ -40,17 +40,21 @@ class App extends React.Component {
         fetch(FETCH_URL, fetchOptions)
           .then(response => response.json())
           .then(json => {
+
             const artist = json.artists.items[0];
             this.setState({ artist: artist });
 
             FETCH_URL = `${ALBUM_URL}/${artist.id}/top-tracks?country=US&`;
+
             fetch(FETCH_URL, fetchOptions)
                 .then(response => response.json())
                 .then(json => {
+
                     const tracks = json.tracks;
                     this.setState({tracks : tracks});
                 })
-        })
+            })
+            .catch(err => console.warn(err));
     }
 
     render () {
