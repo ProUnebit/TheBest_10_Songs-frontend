@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { FormGroup, FormControl, InputGroup, Glyphicon, Well } from 'react-bootstrap';
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import Profile from './Profile';
 import Gallery from './Gallery';
 
