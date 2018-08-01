@@ -15,10 +15,6 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount() {
-
-    }
-
     search = () => {
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
