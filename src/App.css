@@ -154,7 +154,7 @@ body {
     margin-left: 3px;
     text-align: center;
     padding: 5px;
-    bottom: 0;
+    bottom: -8px;
 }
 
 .track-play {
