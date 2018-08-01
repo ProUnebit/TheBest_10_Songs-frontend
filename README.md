@@ -10,7 +10,9 @@
 
 **Instruction:** You need to have an account [Spotify](https://www.spotify.com) or [Facebook](https://www.facebook.com/). Click to [link](https://the-best-10-songs-backend.herokuapp.com/login), search for an artists and get **top 10 songs** by your group/singer. 👌
 
+- - -
 
+![](public/artist-card-mid_size.png) ![](public/tracks-ex-2.png)
 
 - - -
 Mail for communication: <ProUnebit@yandex.ru>
